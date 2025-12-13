@@ -20,7 +20,9 @@ BharatConnect connects Shippers and Drivers on a single digital platform to simp
 - ### Contributing
 - ### License
 - ### Contact
-  
+
+---
+ 
 ## About the Project
 
 BharatConnect is a smart logistics management platform designed for the Indian transportation ecosystem.
@@ -29,6 +31,8 @@ It allows Shippers to book transport easily and Drivers to manage vehicles, book
 The platform also includes an AI assistant SetuAI, which provides issue-focused help related to logistics, bookings, routes, and platform usage.
 
 This project follows a secure, scalable, and role-based architecture with JWT authentication and OTP verification.
+
+---
 
 ## Features
 
@@ -48,7 +52,9 @@ This project follows a secure, scalable, and role-based architecture with JWT au
 
 🔄 Booking status management (Pending, Paid, Accepted, Ongoing, Completed)
 
-🇮🇳 Built for Indian logistics & transport use-cases
+🇮🇳  Built for Indian logistics & transport use-cases
+
+---
 
 ## Tech Stack
 - Frontend: React.js, Tailwind CSS
