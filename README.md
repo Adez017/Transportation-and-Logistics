@@ -36,23 +36,23 @@ This project follows a secure, scalable, and role-based architecture with JWT au
 
 ## Features
 
-🔐 Secure authentication with JWT & OTP
+Secure authentication with JWT & OTP
 
-👤 Role-based access (Shipper & Driver)
+Role-based access (Shipper & Driver)
 
-🚛 Vehicle management (Add, Update, View)
+Vehicle management (Add, Update, View)
 
-📦 Transport booking & order lifecycle
+Transport booking & order lifecycle
 
-🗺️ Live route mapping & distance calculation
+Live route mapping & distance calculation
 
-💰 Dynamic fare calculation
+Dynamic fare calculation
 
-🤖 SetuAI – AI assistant for logistics & support
+SetuAI – AI assistant for logistics & support
 
-🔄 Booking status management (Pending, Paid, Accepted, Ongoing, Completed)
+Booking status management (Pending, Paid, Accepted, Ongoing, Completed)
 
-🇮🇳  Built for Indian logistics & transport use-cases
+Built for Indian logistics & transport use-cases
 
 ---
 
@@ -94,15 +94,15 @@ This project follows a secure, scalable, and role-based architecture with JWT au
 
 ## Installation
 
-- 1️⃣ Clone the repository
+- 1. Clone the repository
 git clone https://github.com/Kush-012/Transportation-and-Logistics
 
   cd bharatconnect
 
-- 2️⃣ Install dependencies
+- 2️. Install dependencies
 npm install
 
-- 3️⃣ Setup Environment Variables
+- 3️. Setup Environment Variables
 
 Create a .env file in the root directory:
 ```
@@ -136,7 +136,7 @@ GEMINI_API_KEY=
 ```
 
 
-- ▶️ Usage
+- 4. Usage
   
 ```
 Start Backend Server
