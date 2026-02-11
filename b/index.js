@@ -9,15 +9,15 @@ const resetpasswordRoute = require("./routes/authRoutes/resetpassword");
 const mapRoute = require("./routes/map");
 const aiRoute = require("./routes/ai");
 
-const addvehicleRoute = require("./routes/vehicles/addvehicle");
-const viewvehicleRoute = require("./routes/vehicles/viewvehicle");
-const updatevehicleRoute = require("./routes/vehicles/updatevehicle");
-const deletevehicleRoute = require("./routes/vehicles/deletevehicle");
-const viewvehiclebydriverEmailRoute= require("./routes/vehicles/viewvehiclebydriverEmail");
+const vehiclesAddRoute = require("./routes/vehicles/addvehicle");
+const vehiclesViewRoute = require("./routes/vehicles/viewvehicle");
+const vehiclesUpdateRoute = require("./routes/vehicles/updatevehicle");
+const vehiclesDeleteRoute = require("./routes/vehicles/deletevehicle");
+const vehiclesByDriverRoute = require("./routes/vehicles/viewvehiclebydriverEmail");
 
-const createbookingRoute = require("./routes/bookings/createbooking");
-const getbookingRoute = require("./routes/bookings/getbooking");
-const updatebookingRoute = require("./routes/bookings/updatebooking");
+const bookingsCreateRoute = require("./routes/bookings/createbooking");
+const bookingsGetRoute = require("./routes/bookings/getbooking");
+const bookingsUpdateRoute = require("./routes/bookings/updatebooking");
 
 
 
@@ -35,15 +35,29 @@ app.use("/signup", signupRoute);
 app.use("/login", loginRoute);
 app.use("/resetpassword", resetpasswordRoute);
 
-app.use("/addvehicle", addvehicleRoute); 
-app.use("/viewvehicle", viewvehicleRoute); 
-app.use("/updatevehicle", updatevehicleRoute);
-app.use("/deletevehicle", deletevehicleRoute);
-app.use("/viewvehiclebydriverEmail", viewvehiclebydriverEmailRoute);
+// RESTful vehicle routes
+app.use("/vehicles", vehiclesAddRoute);
+app.use("/vehicles", vehiclesViewRoute);
+app.use("/vehicles", vehiclesUpdateRoute);
+app.use("/vehicles", vehiclesDeleteRoute);
+app.use("/vehicles", vehiclesByDriverRoute);
 
-app.use("/createbooking", createbookingRoute);
-app.use("/getbooking", getbookingRoute);
-app.use("/updatebooking", updatebookingRoute);
+// Backward compatibility vehicle routes
+app.use("/addvehicle", vehiclesAddRoute);
+app.use("/viewvehicle", vehiclesViewRoute);
+app.use("/updatevehicle", vehiclesUpdateRoute);
+app.use("/deletevehicle", vehiclesDeleteRoute);
+app.use("/viewvehiclebydriverEmail", vehiclesByDriverRoute);
+
+// RESTful booking routes
+app.use("/bookings", bookingsCreateRoute);
+app.use("/bookings", bookingsGetRoute);
+app.use("/bookings", bookingsUpdateRoute);
+
+// Backward compatibility booking routes
+app.use("/createbooking", bookingsCreateRoute);
+app.use("/getbooking", bookingsGetRoute);
+app.use("/updatebooking", bookingsUpdateRoute);
 
 
 

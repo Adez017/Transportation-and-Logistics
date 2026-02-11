@@ -4,6 +4,10 @@ const authVerify = require("../../middlewares/auth");
 
 const router = express.Router();
 
-router.get("/:driverEmail", authVerify, viewvehiclebydriverEmail);
+// RESTful: GET /vehicles/driver/:driverEmail
+router.get("/driver/:driverEmail", authVerify, viewvehiclebydriverEmail);
+
+// Backward compatibility: GET /viewvehiclebydriverEmail/:driverEmail
+router.get("/viewvehiclebydriverEmail/:driverEmail", authVerify, viewvehiclebydriverEmail);
 
 module.exports = router;
