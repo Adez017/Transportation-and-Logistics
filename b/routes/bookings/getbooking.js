@@ -1,12 +1,15 @@
 const express = require("express");
 const router = express.Router();
 const { getbooking } = require("../../controllers/bookings/getbooking");
+
 const authmiddleware = require("../../middlewares/auth");
+const { authorizeRoles } = require("../../middlewares/userRole");
 
-// RESTful: GET /bookings
-router.get("/", authmiddleware, getbooking);
-
-// Backward compatibility: GET /getbooking
-router.get("/getbooking", authmiddleware, getbooking);
+router.get(
+  "/",
+  authmiddleware,
+  authorizeRoles("shipper"),
+  getbooking
+);
 
 module.exports = router;

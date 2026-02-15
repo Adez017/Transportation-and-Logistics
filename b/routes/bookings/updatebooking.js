@@ -1,12 +1,15 @@
 const express = require("express");
 const router = express.Router();
 const { updatebooking } = require("../../controllers/bookings/updatebooking");
+
 const authmiddleware = require("../../middlewares/auth");
+const { authorizeRoles } = require("../../middlewares/userRole");
 
-// RESTful: PUT /bookings/:bookingid
-router.put("/:bookingid", authmiddleware, updatebooking);
-
-// Backward compatibility: POST /updatebooking/:bookingid
-router.post("/updatebooking/:bookingid", authmiddleware, updatebooking);
+router.put(
+  "/:id",
+  authmiddleware,
+  authorizeRoles("shipper"),
+  updatebooking
+);
 
 module.exports = router;
