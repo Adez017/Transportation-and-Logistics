@@ -12,4 +12,7 @@ router.get(
   viewVehicles
 );
 
+// Backward compatibility: GET /viewvehicle
+router.get("/viewvehicle", authVerify, viewVehicles);
+
 module.exports = router;

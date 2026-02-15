@@ -14,4 +14,7 @@ router.put(
   updateVehicleByNumber
 );
 
+// Backward compatibility: POST /updatevehicle/:vehicleNumber
+router.post("/updatevehicle/:vehicleNumber", authMiddleware, upload.single("image"), updateVehicleByNumber);
+
 module.exports = router;

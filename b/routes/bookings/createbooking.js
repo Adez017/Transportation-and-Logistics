@@ -12,4 +12,7 @@ router.post(
   createbooking
 );
 
+// Backward compatibility: POST /createbooking
+router.post("/createbooking", authmiddleware, createbooking);
+
 module.exports = router;
