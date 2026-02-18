@@ -1,6 +1,8 @@
 const express = require("express");
 const cors = require("cors");
 require("./config/dbconfig");
+const apiLimiter = require("./middlewares/rateLimiter");
+
 
 const signupRoute = require("./routes/authRoutes/signup");
 const loginRoute = require("./routes/authRoutes/login");
@@ -22,10 +24,14 @@ const updatebookingRoute = require("./routes/bookings/updatebooking");
 
 
 
+
+
 const app = express();
 
 app.use(express.json());
 app.use(cors());
+app.use(apiLimiter);
+
 
 
 app.use("/api", aiRoute);  
