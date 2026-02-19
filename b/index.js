@@ -22,10 +22,14 @@ const bookingsUpdateRoute = require("./routes/bookings/updatebooking");
 
 
 
+
+
 const app = express();
 
 app.use(express.json());
 app.use(cors());
+app.use(apiLimiter);
+
 
 
 app.use("/api", aiRoute);  
